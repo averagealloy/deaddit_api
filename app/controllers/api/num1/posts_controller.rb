@@ -10,5 +10,17 @@ class Api::num1::PostsController < ApplicationController
 
         render json: @post, status: 200
     end
+    def create
+        @post = Post.create(post_params)
+
+        render json: @post, status: 200
+    end 
+
     
+
+    private 
+
+    def post_params
+        params.require(:post).permit(:title, :body)
+    end 
 end
