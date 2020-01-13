@@ -16,6 +16,11 @@ class Api::num1::PostsController < ApplicationController
         render json: @post, status: 200
     end 
 
+    def update
+        @post = Post.find(params[:id])
+        @post.update(post_params)
+        render json: @post, status: 200
+    end 
     
 
     private 
