@@ -1,2 +1,0 @@
-class DeaditController < ApplicationController
-end
