@@ -1,6 +1,6 @@
-class Api::num1::PostsController < ApplicationController
+class Api::Num1::PostsController < ApplicationController
     def index 
-        @posts = Post.All
+        @posts = Post.all
 
         render json: @posts, status: 200
     end 
