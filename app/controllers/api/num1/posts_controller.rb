@@ -11,13 +11,15 @@ class Api::Num1::PostsController < ApplicationController
         render json: @post, status: 200
     end
     def create
-        @post = Post.create(post_params)
-
+        @post = Post.new(post_params)
+        # binding.pry
+        @post.save
         render json: @post, status: 200
     end 
 
     def update
         @post = Post.find(params[:id])
+        
         @post.update(post_params)
         render json: @post, status: 200
     end 
@@ -31,6 +33,6 @@ class Api::Num1::PostsController < ApplicationController
     private 
 
     def post_params
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body )
     end 
 end
