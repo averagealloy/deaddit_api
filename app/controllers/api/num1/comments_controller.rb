@@ -1,18 +1,32 @@
 class Api::Num1::CommentsController < ApplicationController
     def index
-        @post = Post.find(params[:id])
-        comments = 
-
+        post = Post.find(params[:post_id])
+        comments = Comment.all
+        render json: comments, status: 200
+    end
     def show
+        comment = Comment.find(params[:id])
+        render json: comment, status: 200
     end 
 
     def create
+        comment = Comment.find(params[:id])
+        comment = Comment.new(comment_params)
+        comment.save
+        render json: comment, status: 200
+        
     end 
 
     def update
+        comment = Comment.find(params[:id])
+        comment.update(comment_params)
+        render json: comment, status: 200
     end 
 
     def destroy
-
+        comment = Comment.find(params[:id])
+        comment.delete
+        render json: { message: "l8ter"}
+    end
 
 end 
