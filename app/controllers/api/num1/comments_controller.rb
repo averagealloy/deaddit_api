@@ -10,6 +10,7 @@ class Api::Num1::CommentsController < ApplicationController
     end 
 
     def create
+        # post = Post.find(params[:post_id]) just in case
         comment = Comment.find(params[:id])
         comment = Comment.new(comment_params)
         comment.save
@@ -29,4 +30,9 @@ class Api::Num1::CommentsController < ApplicationController
         render json: { message: "l8ter"}
     end
 
+    private 
+    
+    def comment_params
+        params.require(:comment).permit(:post_id,:the_comment)
+    end 
 end 
