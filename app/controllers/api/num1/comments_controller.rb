@@ -27,12 +27,12 @@ class Api::Num1::CommentsController < ApplicationController
     def destroy
         comment = Comment.find(params[:id])
         comment.delete
-        render json: { message: "l8ter"}
+        render json: { message: "there goes your comment"}
     end
 
     private 
     
     def comment_params
-        params.require(:comment).permit(:post_id,:the_comment)
+        params.require(:comment).permit(:post_id, :the_comment)
     end 
 end 
