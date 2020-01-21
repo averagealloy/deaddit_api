@@ -11,8 +11,8 @@ class Api::Num1::PostsController < ApplicationController
         render json: @post,include:[:comments],status: 200
     end
     def create
+        
         @post = Post.new(post_params)
-        # binding.pry
         @post.save
         render json: @post,include:[:comments], status: 200
     end 
