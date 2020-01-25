@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+
+2.times do |i|
+    Comment.create!(the_comment: i, post_id: 2)
+end 
+
+
+2.times do |i|
+    Comment.create!(the_comment: i, post_id: 3)
+end 
+
+
+2.times do |i|
+    Comment.create!(the_comment: i, post_id: 5)
+end 
+
+
+2.times do |i|
+    Comment.create!(the_comment: i, post_id: 4)
+end 
