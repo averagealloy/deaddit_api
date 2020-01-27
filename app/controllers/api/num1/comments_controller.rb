@@ -1,6 +1,5 @@
 class Api::Num1::CommentsController < ApplicationController
     def index
-        # post = Post.find(params[:post_id])
         comments = Comment.all
         render json: comments, status: 200
     end
@@ -10,7 +9,7 @@ class Api::Num1::CommentsController < ApplicationController
     end 
 
     def create
-        # post = Post.find(params[:post_id]) just in case
+        
         comment = Comment.new(comment_params)
         comment.save
         render json: comment, status: 200
