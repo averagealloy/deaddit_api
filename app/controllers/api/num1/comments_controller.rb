@@ -12,7 +12,8 @@ class Api::Num1::CommentsController < ApplicationController
         
         comment = Comment.new(comment_params)
         comment.save
-        render json: comment, status: 404
+        render json: comment, status: 200
+        #  404 to test 
         
     end 
 
